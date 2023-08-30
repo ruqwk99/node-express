@@ -9,10 +9,24 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css" rel="stylesheet" type="text/css" />
     <link rel="icon" href="/images/favicon.ico">
 </head>
+    <style>
+    .rotate2 {
+    animation: rotateAnimation2 3s linear infinite; /* 2초간 선형적으로 회전, 무한 반복 */
+    }
+
+    @keyframes rotateAnimation2 {
+        from {
+          transform: rotateY(0deg);
+        }
+        to {
+          transform: rotateY(360deg); 
+        }
+    }
+    </style>
 <body>
     <div class="hero min-h-screen bg-base-200">
         <div class="hero-content flex-col lg:flex-row-reverse">
-          <img src="/images/node.png" class="w-36 rounded-lg md:ml-5 lg:ml-5" />
+          <img src="/images/node.png" class="w-36 rounded-lg md:ml-5 lg:ml-5 rotate2" />
           <div>
             <h1 class="text-5xl font-bold">Node.js</h1>
             <p class="py-6"></p>
@@ -33,7 +47,7 @@
   document.addEventListener("keydown", function(e) {
   if (e.key === "F9") {
     alert("테스트페이지로 이동합니다.")
-    window.location.href = './설정페이지.html';
+    window.location.href = './views/설정페이지.html';
   }
 });
       </script>
