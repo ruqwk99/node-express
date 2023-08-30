@@ -1,0 +1,795 @@
+<style>
+
+html, body, * {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    font-family: Pretendard;
+}
+  /* Chrome 브라우저에서만 작동하는 스타일 */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* 기본 스타일 제거 */
+    margin: 0; /* 기본 스타일 제거 */
+   /* padding-top: 100px; 화살표 이미지 크기에 따라 조절하세요 */
+}
+
+body {
+  background: #1E1930;
+  color: #D2D1D5;
+}
+tr:nth-child(even) {
+  background-color:rgba(169, 169, 169, 0.384);
+}
+tr:nth-child(odd) {
+  background-color:rgba(169, 169, 169, 0.384);
+}
+th {
+  background-color: #342F44;
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  width: 200px;
+}
+td{
+  font-size: 30px;
+  text-align: center;
+}
+.noBorder {
+    border:none !important;
+}
+input{
+  text-align: center;
+}
+/*
+button {
+  background: #a100fe;
+  margin-top: 5rem;
+  padding: .8rem 1.8rem;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: .2s;
+  cursor: pointer;
+  margin-left: 40%;
+}*/
+#test99{
+  background-color: #0b0011;
+}
+.text99{
+  color: blue;
+}
+button{
+  font-size: 33px;
+  margin-top: 50px;
+}
+.서브밋{
+  font-size: 33px;
+  position: fixed;
+  margin-top: 58px;
+  top: 40%;
+  left: 75%;
+}
+h5{
+  color: red;
+  font-size: 20px;
+  height: 0;
+}
+#c9{
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  top: 60%;
+  right: 25%;
+}
+.container{
+  margin-top: 27%;
+  margin-left: 12.5%;
+}
+.size{
+width: 100px;
+}
+.arrow {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 25px solid red;
+    position: absolute;
+    left: 45%;
+    top: -7%;
+}
+</style>
+<div class="container">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">No</th>
+          <th scope="col">메 뉴</th>
+          <th scope="col">확률설정</th>
+          <th scope="col">현재확률</th>
+        </tr>
+      </thead>
+      <tbody>
+        <form name="" action="#" method="post">
+        <tr>
+          <td class="noBorder">1</td>
+          <td><input id="TD1" class="size" name="" type="text" value="" maxlength="5" autocomplete="off"></td>
+          <td><input id="ND1" name="" type="number" min="0" max="100" autocomplete="off"></td>
+          <td id="퍼센트1" class="noBorder">0%</td>
+        </tr>
+        <tr>
+          <td class="noBorder">2</td>
+          <td><input id="TD2" class="size" name="" type="text" value="" maxlength="5" autocomplete="off"></td>
+          <td><input id="ND2" name="" type="number" min="0" max="100" autocomplete="off"></td>
+          <td id="퍼센트2" class="noBorder">0%</td>
+        </tr>
+        <tr>
+          <td class="noBorder">3</td>
+          <td><input id="TD3" class="size" name="" type="text" value="" maxlength="5" autocomplete="off"></td>
+          <td><input id="ND3" name="" type="number" min="0" max="100" autocomplete="off"></td>
+          <td id="퍼센트3" class="noBorder">0%</td>
+        </tr>
+        <tr>
+          <td class="noBorder">4</td>
+          <td><input id="TD4" class="size" name="" type="text" value="" maxlength="5" autocomplete="off"></td>
+          <td><input id="ND4" name="" type="number" min="0" max="100" autocomplete="off"></td>
+          <td id="퍼센트4" class="noBorder">0%</td>
+        </tr>
+        <tr>
+          <td class="noBorder">5</td>
+          <td><input id="TD5" class="size" name="" type="text" value="" maxlength="5" autocomplete="off"></td>
+          <td><input id="ND5" name="" type="number" min="0" max="100" autocomplete="off"></td>
+          <td id="퍼센트5" class="noBorder">0%</td>
+        </tr>
+        <tr id="66">
+          <td class="noBorder">6</td>
+          <td><input id="TD6" class="size" name="" type="text" value="" maxlength="5" autocomplete="off"></td>
+          <td><input id="ND6" name="" type="number" min="0" max="100" autocomplete="off"></td>
+          <td id="퍼센트6" class="noBorder">0%</td>
+        </tr>
+        <tr id="77">
+          <td class="noBorder">7</td>
+          <td><input id="TD7" class="size" name="" type="text" value="" maxlength="5" autocomplete="off"></td>
+          <td><input id="ND7" name="" type="number" min="0" max="100" autocomplete="off"></td>
+          <td id="퍼센트7" class="noBorder">0%</td>
+        </tr>
+        <tr>
+          <td class="noBorder"></td>
+          <td></td>
+          <td><h5></h5></td>
+          <td id="합계">100%</td>
+        </tr>
+        <input class="서브밋" type="submit" value="저 장">
+        </form>
+      </tbody>
+    </table>
+  </div>
+</div>
+<button id="B1" class="서브밋" style="left:16%">메인으로</button>
+<div id="c9">
+  <div class="arrow"></div>
+  <img id="previewImage" src="" alt="이미지확인" style="max-width: 500px; max-height: 500px;">
+</div>
+<button id="B999" class="서브밋" style="left:37%">자동분배</button>
+<button id="B99" class="서브밋" style="left:52%">수동분배</button>
+<button id="changeImageButton" class="서브밋" style="left:44%; top:50%; background-color: red;">돌림판설정</button>
+<script>
+previewImage.src = localStorage.getItem("DATA99")||'./Image/Default.png'; //초기화이미지뷰어
+var ImageCounting = localStorage.getItem("DATA99")||'./Image/Default.png'; //이미지체크카운팅
+
+if(ImageCounting =='./Image/Default.png'){
+  const inputAll = document.querySelectorAll('input');
+  document.getElementById('B999').style.display='none';
+  document.getElementById('B99').style.display='none';
+
+
+  inputAll.forEach(input => {
+    input.addEventListener('focus', handleFocus);
+  });
+
+  function handleFocus(e) {
+    e.target.blur();
+    alert("돌림판을 먼저 설정해주세요!");
+    //console.log(`Input(${event.target.id})에 포커스가 감지`);
+  }
+}
+else{document.getElementById('changeImageButton').style.background='';}
+//document.getElementById('B99').style.display='none';
+//localStorage.setItem("list-chk",localStorage.getItem("list-chk")||false)
+
+
+if(ImageCounting !='./Image/Default.png'){
+const inputAll = document.querySelectorAll('input'); //input[type=text]
+
+inputAll.forEach(input => {
+    input.addEventListener('focus', (e)=>{
+      //console.log(`Input(${e.target.id})에 포커스가 감지`);
+      var targeting = `${e.target.id}`;
+
+      switch(localStorage.getItem('DATA99')){
+      case './Image/5.png':
+      if( targeting == 'TD1' || targeting == 'ND1')
+      document.getElementById('previewImage').style.transform = 'rotate(-30deg)';
+      else if(targeting == 'TD2' || targeting == 'ND2')
+      document.getElementById('previewImage').style.transform = 'rotate(-100deg)';
+      else if(targeting == 'TD3' || targeting == 'ND3')
+      document.getElementById('previewImage').style.transform = 'rotate(-180deg)';
+      else if(targeting == 'TD4' || targeting == 'ND4')
+      document.getElementById('previewImage').style.transform = 'rotate(-250deg)';
+      else 
+      document.getElementById('previewImage').style.transform = 'rotate(-330deg)';
+      break;
+
+      case './Image/6.png':
+      if( targeting == 'TD1' || targeting == 'ND1')
+      document.getElementById('previewImage').style.transform = 'rotate(-60deg)';
+      else if(targeting == 'TD2' || targeting == 'ND2')
+      document.getElementById('previewImage').style.transform = 'rotate(-120deg)';
+      else if(targeting == 'TD3' || targeting == 'ND3')
+      document.getElementById('previewImage').style.transform = 'rotate(-180deg)';
+      else if(targeting == 'TD4' || targeting == 'ND4')
+      document.getElementById('previewImage').style.transform = 'rotate(-240deg)';
+      else if(targeting == 'TD5' || targeting == 'ND5')
+      document.getElementById('previewImage').style.transform = 'rotate(-300deg)';
+      else 
+      document.getElementById('previewImage').style.transform = 'rotate(-360deg)';
+      break;
+      
+      case './Image/7.png':
+      if( targeting == 'TD1' || targeting == 'ND1')
+      document.getElementById('previewImage').style.transform = 'rotate(-50deg)';
+      else if(targeting == 'TD2' || targeting == 'ND2')
+      document.getElementById('previewImage').style.transform = 'rotate(-100deg)';
+      else if(targeting == 'TD3' || targeting == 'ND3')
+      document.getElementById('previewImage').style.transform = 'rotate(-150deg)';
+      else if(targeting == 'TD4' || targeting == 'ND4')
+      document.getElementById('previewImage').style.transform = 'rotate(-200deg)';
+      else if(targeting == 'TD5' || targeting == 'ND5')
+      document.getElementById('previewImage').style.transform = 'rotate(-250deg)';
+      else if(targeting == 'TD6' || targeting == 'ND6')
+      document.getElementById('previewImage').style.transform = 'rotate(-300deg)';
+      else
+      document.getElementById('previewImage').style.transform = 'rotate(-360deg)';
+      break;
+
+      default:
+        console.log('Error ???');
+      } 
+    });
+});
+}
+
+
+
+localStorage.getItem("list-test");
+
+if(localStorage.getItem("list-test")==1) //6
+document.getElementById('77').style.display=`${localStorage.getItem("list-1")}`;
+else if(localStorage.getItem("list-test")==2) //7
+document.getElementById('77').style.display=`${localStorage.getItem("list-2")}`;
+else{ //5
+  document.getElementById('66').style.display=`${localStorage.getItem("list-1")}`;
+  document.getElementById('77').style.display=`${localStorage.getItem("list-2")}`;
+}
+
+const changeImageButton = document.getElementById('changeImageButton');
+const image = document.getElementById('previewImage');
+
+const imageSources = 
+['./Image/5.png', './Image/6.png', './Image/7.png'];
+let currentIndex;
+changeImageButton.addEventListener('click', function() {
+    if(localStorage.getItem("DATA99")==imageSources[0])
+    currentIndex=1;
+    else if(localStorage.getItem("DATA99")==imageSources[1])
+    currentIndex=2;
+    else 
+    currentIndex=0;
+    //currentIndex = (currentIndex + 1) % imageSources.length;
+    image.src = imageSources[currentIndex];
+
+    switch(currentIndex){
+      case 0:
+      document.getElementById('66').style.display='none';
+      document.getElementById('77').style.display='none';
+        localStorage.clear();
+        localStorage.setItem("list-1",'none');
+        localStorage.setItem("list-2",'none');
+        localStorage.setItem("list-test",404);
+        localStorage.setItem("DATA99",imageSources[0]);
+        setTimeout(()=>{location.reload();},100)
+        break;
+      case 1:
+      document.getElementById('66').style.display='';
+      document.getElementById('77').style.display='none';
+        localStorage.clear();
+        localStorage.setItem("list-1",'none');
+        localStorage.setItem("list-test",1);
+        localStorage.setItem("DATA99",imageSources[1]);
+        setTimeout(()=>{location.reload();},100)
+        break;
+      case 2:
+      document.getElementById('66').style.display='';
+      document.getElementById('77').style.display='';
+        localStorage.clear();
+        localStorage.setItem("list-2",'');
+        localStorage.setItem("list-test",2);
+        localStorage.setItem("DATA99",imageSources[2]);
+        setTimeout(()=>{location.reload();},100)
+        break;
+    }
+
+});
+
+
+const form = document.querySelector("form");
+var 텍스트 = document.querySelector("h5");
+var Name1=localStorage.getItem("TD-1");
+var Name2=localStorage.getItem("TD-2");
+var Name3=localStorage.getItem("TD-3");
+var Name4=localStorage.getItem("TD-4");
+var Name5=localStorage.getItem("TD-5");
+var Name6=localStorage.getItem("TD-6");
+var Name7=localStorage.getItem("TD-7");
+var number1=localStorage.getItem("ND-1");
+var number2=localStorage.getItem("ND-2");
+var number3=localStorage.getItem("ND-3");
+var number4=localStorage.getItem("ND-4");
+var number5=localStorage.getItem("ND-5");
+var number6=localStorage.getItem("ND-6");
+var number7=localStorage.getItem("ND-7");
+var 홀드=localStorage.getItem("ND-hold");
+var number99=parseInt(number1)+parseInt(number2)+parseInt(number3)+parseInt(number4)+parseInt(number5)+parseInt(number6)+parseInt(number7);
+//var number99=parseFloat(number1)+parseFloat(number2)+parseFloat(number3)+parseFloat(number4)+parseFloat(number5)+parseFloat(number6)+parseFloat(number7);
+
+
+localStorage.getItem("Data-01")||0;
+localStorage.getItem("Data-02")||0;
+localStorage.getItem("Data-03")||0;
+localStorage.getItem("Data-04")||0;
+localStorage.getItem("Data-05")||0;
+localStorage.getItem("Data-06")||0;
+localStorage.getItem("Data-07")||0;
+document.getElementById("TD1").value=Name1;
+document.getElementById("TD2").value=Name2;
+document.getElementById("TD3").value=Name3;
+document.getElementById("TD4").value=Name4;
+document.getElementById("TD5").value=Name5;
+document.getElementById("TD6").value=Name6;
+document.getElementById("TD7").value=Name7;
+
+
+if(홀드=='true'){
+document.getElementById("ND1").value=(number1);
+document.getElementById("ND2").value=(number2);
+document.getElementById("ND3").value=(number3);
+document.getElementById("ND4").value=(number4);
+document.getElementById("ND5").value=(number5);
+document.getElementById("ND6").value=(number6);
+document.getElementById("ND7").value=(number7);
+}
+else{
+document.getElementById("ND1").value=parseInt(number1);
+document.getElementById("ND2").value=parseInt(number2);
+document.getElementById("ND3").value=parseInt(number3);
+document.getElementById("ND4").value=parseInt(number4);
+document.getElementById("ND5").value=parseInt(number5);
+document.getElementById("ND6").value=parseInt(number6);
+document.getElementById("ND7").value=parseInt(number7);
+}
+
+document.getElementById("퍼센트1").textContent=`${parseInt(number1)}%`;
+document.getElementById("퍼센트2").textContent=`${parseInt(number2)}%`;
+document.getElementById("퍼센트3").textContent=`${parseInt(number3)}%`;
+document.getElementById("퍼센트4").textContent=`${parseInt(number4)}%`;
+document.getElementById("퍼센트5").textContent=`${parseInt(number5)}%`;
+document.getElementById("퍼센트6").textContent=`${parseInt(number6)}%`;
+document.getElementById("퍼센트7").textContent=`${parseInt(number7)}%`;
+
+if(localStorage.getItem('균등분배체크')==99&&localStorage.getItem('MAIN-START')=='true'){ //자동버튼
+  document.getElementById("ND1").style.backgroundColor="#342F44";
+  document.getElementById("ND2").style.backgroundColor="#342F44";
+  document.getElementById("ND3").style.backgroundColor="#342F44";
+  document.getElementById("ND4").style.backgroundColor="#342F44";
+  document.getElementById("ND5").style.backgroundColor="#342F44";
+  document.getElementById("ND6").style.backgroundColor="#342F44";
+  document.getElementById("ND7").style.backgroundColor="#342F44";
+  텍스트.textContent=`100%`; document.getElementById('합계').textContent='';
+  document.getElementById("ND1").disabled = true;
+  document.getElementById("ND2").disabled = true;
+  document.getElementById("ND3").disabled = true;
+  document.getElementById("ND4").disabled = true;
+  document.getElementById("ND5").disabled = true;
+  document.getElementById("ND6").disabled = true;
+  document.getElementById("ND7").disabled = true;
+}
+else{ //수동버튼
+  document.getElementById("ND1").style.backgroundColor="";
+  document.getElementById("ND2").style.backgroundColor="";
+  document.getElementById("ND3").style.backgroundColor="";
+  document.getElementById("ND4").style.backgroundColor="";
+  document.getElementById("ND5").style.backgroundColor="";
+  document.getElementById("ND6").style.backgroundColor="";
+  document.getElementById("ND7").style.backgroundColor="";
+  document.getElementById('합계').textContent='100%';
+  document.getElementById("ND1").disabled = false;
+  document.getElementById("ND2").disabled = false;
+  document.getElementById("ND3").disabled = false;
+  document.getElementById("ND4").disabled = false;
+  document.getElementById("ND5").disabled = false;
+  document.getElementById("ND6").disabled = false;
+  document.getElementById("ND7").disabled = false;
+}
+
+function 자동확률2(){
+  document.getElementById("ND1").value='';
+  document.getElementById("ND2").value='';
+  document.getElementById("ND3").value='';
+  document.getElementById("ND4").value='';
+  document.getElementById("ND5").value='';
+  document.getElementById("ND6").value='';
+  document.getElementById("ND7").value='';
+  document.getElementById("ND1").setAttribute('type', 'number');
+  document.getElementById("ND2").setAttribute('type', 'number');
+  document.getElementById("ND3").setAttribute('type', 'number');
+  document.getElementById("ND4").setAttribute('type', 'number');
+  document.getElementById("ND5").setAttribute('type', 'number');
+  document.getElementById("ND6").setAttribute('type', 'number');
+  document.getElementById("ND7").setAttribute('type', 'number');
+  document.getElementById("ND1").style.backgroundColor="";
+  document.getElementById("ND2").style.backgroundColor="";
+  document.getElementById("ND3").style.backgroundColor="";
+  document.getElementById("ND4").style.backgroundColor="";
+  document.getElementById("ND5").style.backgroundColor="";
+  document.getElementById("ND6").style.backgroundColor="";
+  document.getElementById("ND7").style.backgroundColor="";
+  텍스트.textContent='';
+  document.getElementById('합계').textContent='100%';
+  document.getElementById("ND1").disabled = false;
+  document.getElementById("ND2").disabled = false;
+  document.getElementById("ND3").disabled = false;
+  document.getElementById("ND4").disabled = false;
+  document.getElementById("ND5").disabled = false;
+  document.getElementById("ND6").disabled = false;
+  document.getElementById("ND7").disabled = false;
+}
+
+if(홀드=='true'){
+document.getElementById("ND1").setAttribute('type',localStorage.getItem("textinput-1"));
+document.getElementById("ND2").setAttribute('type',localStorage.getItem("textinput-2"));
+document.getElementById("ND3").setAttribute('type',localStorage.getItem("textinput-3"));
+document.getElementById("ND4").setAttribute('type',localStorage.getItem("textinput-4"));
+document.getElementById("ND5").setAttribute('type',localStorage.getItem("textinput-5"));
+document.getElementById("ND6").setAttribute('type',localStorage.getItem("textinput-6"));
+document.getElementById("ND7").setAttribute('type',localStorage.getItem("textinput-7"));
+}
+else{}
+
+var 실시간확률체크 = number99;
+var 실시간남은확률 = (100-number99);
+//텍스트.textContent=`${실시간확률체크}%`;
+
+
+document.getElementById('ND1').addEventListener('input', ()=>{
+    실시간확률체크=Number(ND1.value)+Number(ND2.value)+
+    Number(ND3.value)+Number(ND4.value)+Number(ND5.value)+Number(ND6.value)+Number(ND7.value);
+    실시간남은확률=(100 - 실시간확률체크);
+    텍스트.textContent=`${실시간남은확률}%`;
+    if(실시간남은확률<0){
+    alert("확률을체크하세요!")
+    ND1.value = ND1.value.slice(0, -1);
+    실시간확률체크=Number(ND1.value)+Number(ND2.value)+
+    Number(ND3.value)+Number(ND4.value)+Number(ND5.value)+Number(ND6.value)+Number(ND7.value);
+    실시간남은확률=(100 - 실시간확률체크);
+    텍스트.textContent=`${실시간남은확률}%`;
+    }
+
+});
+
+document.getElementById('ND2').addEventListener('input', ()=>{
+  실시간확률체크=Number(ND1.value)+Number(ND2.value)+
+    Number(ND3.value)+Number(ND4.value)+Number(ND5.value)+Number(ND6.value)+Number(ND7.value);
+    실시간남은확률=(100 - 실시간확률체크);
+    텍스트.textContent=`${실시간남은확률}%`;
+    if(실시간남은확률<0){
+    alert("확률을체크하세요!")
+    ND2.value = ND2.value.slice(0, -1);
+    실시간확률체크=Number(ND1.value)+Number(ND2.value)+
+    Number(ND3.value)+Number(ND4.value)+Number(ND5.value)+Number(ND6.value)+Number(ND7.value);
+    실시간남은확률=(100 - 실시간확률체크);
+    텍스트.textContent=`${실시간남은확률}%`;
+    }
+    
+});
+document.getElementById('ND3').addEventListener('input', ()=>{
+  실시간확률체크=Number(ND1.value)+Number(ND2.value)+
+    Number(ND3.value)+Number(ND4.value)+Number(ND5.value)+Number(ND6.value)+Number(ND7.value);
+    실시간남은확률=(100 - 실시간확률체크);
+    텍스트.textContent=`${실시간남은확률}%`;
+    if(실시간남은확률<0){
+    alert("확률을체크하세요!")
+    ND3.value = ND3.value.slice(0, -1);
+    실시간확률체크=Number(ND1.value)+Number(ND2.value)+
+    Number(ND3.value)+Number(ND4.value)+Number(ND5.value)+Number(ND6.value)+Number(ND7.value);
+    실시간남은확률=(100 - 실시간확률체크);
+    텍스트.textContent=`${실시간남은확률}%`;
+    }
+    
+});
+document.getElementById('ND4').addEventListener('input', ()=>{
+  실시간확률체크=Number(ND1.value)+Number(ND2.value)+
+    Number(ND3.value)+Number(ND4.value)+Number(ND5.value)+Number(ND6.value)+Number(ND7.value);
+    실시간남은확률=(100 - 실시간확률체크);
+    텍스트.textContent=`${실시간남은확률}%`;
+    if(실시간남은확률<0){
+    alert("확률을체크하세요!")
+    ND4.value = ND4.value.slice(0, -1);
+    실시간확률체크=Number(ND1.value)+Number(ND2.value)+
+    Number(ND3.value)+Number(ND4.value)+Number(ND5.value)+Number(ND6.value)+Number(ND7.value);
+    실시간남은확률=(100 - 실시간확률체크);
+    텍스트.textContent=`${실시간남은확률}%`;
+    }
+    
+});
+document.getElementById('ND5').addEventListener('input', ()=>{
+  실시간확률체크=Number(ND1.value)+Number(ND2.value)+
+    Number(ND3.value)+Number(ND4.value)+Number(ND5.value)+Number(ND6.value)+Number(ND7.value);
+    실시간남은확률=(100 - 실시간확률체크);
+    텍스트.textContent=`${실시간남은확률}%`;
+    if(실시간남은확률<0){
+    alert("확률을체크하세요!")
+    ND5.value = ND5.value.slice(0, -1);
+    실시간확률체크=Number(ND1.value)+Number(ND2.value)+
+    Number(ND3.value)+Number(ND4.value)+Number(ND5.value)+Number(ND6.value)+Number(ND7.value);
+    실시간남은확률=(100 - 실시간확률체크);
+    텍스트.textContent=`${실시간남은확률}%`;
+    }
+    
+});
+document.getElementById('ND6').addEventListener('input', ()=>{
+  실시간확률체크=Number(ND1.value)+Number(ND2.value)+
+    Number(ND3.value)+Number(ND4.value)+Number(ND5.value)+Number(ND6.value)+Number(ND7.value);
+    실시간남은확률=(100 - 실시간확률체크);
+    텍스트.textContent=`${실시간남은확률}%`;
+    if(실시간남은확률<0){
+    alert("확률을체크하세요!")
+    ND6.value = ND6.value.slice(0, -1);
+    실시간확률체크=Number(ND1.value)+Number(ND2.value)+
+    Number(ND3.value)+Number(ND4.value)+Number(ND5.value)+Number(ND6.value)+Number(ND7.value);
+    실시간남은확률=(100 - 실시간확률체크);
+    텍스트.textContent=`${실시간남은확률}%`;
+    }
+    
+});
+document.getElementById('ND7').addEventListener('input', ()=>{
+  실시간확률체크=Number(ND1.value)+Number(ND2.value)+
+    Number(ND3.value)+Number(ND4.value)+Number(ND5.value)+Number(ND6.value)+Number(ND7.value);
+    실시간남은확률=(100 - 실시간확률체크);
+    텍스트.textContent=`${실시간남은확률}%`;
+    if(실시간남은확률<0){
+    alert("확률을체크하세요!")
+    ND7.value = ND7.value.slice(0, -1);
+    실시간확률체크=Number(ND1.value)+Number(ND2.value)+
+    Number(ND3.value)+Number(ND4.value)+Number(ND5.value)+Number(ND6.value)+Number(ND7.value);
+    실시간남은확률=(100 - 실시간확률체크);
+    텍스트.textContent=`${실시간남은확률}%`;
+    }
+    
+});
+
+//var count=localStorage.getItem('홀드버튼카운트')||0;
+//localStorage.setItem('홀드버튼카운트',count)
+//var count=0;
+/*
+document.getElementById('B99').addEventListener('click',()=>{
+if(count==0){
+  자동확률(localStorage.getItem('list-test'));
+  localStorage.setItem('균등분배체크',99);
+  count++;
+  //localStorage.setItem('홀드버튼카운트',count);
+  }
+  else{
+    자동확률2();
+    count=0;
+    localStorage.setItem('균등분배체크',0);
+  }
+})*/
+['./Image/5.png', './Image/6.png', './Image/7.png'];
+
+document.getElementById('B999').addEventListener('click',()=>{
+const 현재확률=Math.round(Number(ND1.value)+Number(ND2.value)+
+Number(ND3.value)+Number(ND4.value)+Number(ND5.value)+Number(ND6.value)+Number(ND7.value));
+  if(현재확률 == 100){
+  alert("이미 설정되었습니다.");
+  return;
+  }
+let 카운트=0; let 체킹; const inputs = document.querySelectorAll('input[type="number"]');
+// NodeList를 배열로 변환
+const inputArray = Array.from(inputs);
+// 특정 조건에 맞는 요소들을 걸러내기
+const filteredInputs = inputArray.filter(input => {
+    const id = input.getAttribute('id');
+    if(localStorage.getItem("DATA99") == './Image/5.png')
+    return id !== 'ND6' && id !== 'ND7';
+    else if(localStorage.getItem("DATA99") == './Image/6.png')
+    return id !== 'ND7';
+    else (localStorage.getItem("DATA99") == './Image/7.png')
+    return id;
+    
+});
+    let allInputsFilled = true;
+
+    filteredInputs.forEach(input => {
+        if (input.value === '') {
+            카운트++;
+        }
+        else 체킹=1;
+    });
+    if(체킹 != 1){실시간남은확률=100;}
+    filteredInputs.forEach(input => {
+      if (input.value === '') {
+        input.value=실시간남은확률/카운트;
+        //input.disabled = true;
+        //allInputsFilled = false;
+      }
+    });
+
+    inputs.forEach(input => {
+        input.disabled = true;
+    });
+
+    localStorage.setItem('균등분배체크',99); TEXTChick();
+
+});
+document.getElementById('B99').addEventListener('click',()=>{
+  자동확률2(); localStorage.setItem('균등분배체크',0);
+});
+
+function TEXTChick(){
+    실시간확률체크=Math.round(Number(ND1.value)+Number(ND2.value)+
+    Number(ND3.value)+Number(ND4.value)+Number(ND5.value)+Number(ND6.value)+Number(ND7.value));
+    실시간남은확률= (100 - 실시간확률체크);
+    텍스트.textContent=`${실시간남은확률}%`;
+}
+
+form.addEventListener("submit", function(event) { //1 2 404 6 7 5 
+  const input1 = document.getElementById("TD1"); 
+  const input2 = document.getElementById("TD2"); 
+  const input3 = document.getElementById("TD3"); 
+  const input4 = document.getElementById("TD4"); 
+  const input5 = document.getElementById("TD5");
+  const input6 = document.getElementById("TD6"); 
+  const input7 = document.getElementById("TD7"); 
+  const inputN1 = document.getElementById("ND1");
+  const inputN2 = document.getElementById("ND2"); 
+  const inputN3 = document.getElementById("ND3"); 
+  const inputN4 = document.getElementById("ND4"); 
+  const inputN5 = document.getElementById("ND5"); 
+  const inputN6 = document.getElementById("ND6"); 
+  const inputN7 = document.getElementById("ND7"); 
+
+  number99=Math.round(Number(ND1.value)+Number(ND2.value)+
+  Number(ND3.value)+Number(ND4.value)+Number(ND5.value)+Number(ND6.value)+Number(ND7.value));
+  event.preventDefault(); // 기본 서브밋 동작X
+  if(number99 === 100 || 실시간남은확률 === 0 ){ //localStorage.getItem('균등분배체크') == 99
+  if(localStorage.getItem("list-test") == 404){
+    if(input1.value == '',input2.value == '',input3.value == '',input4.value == '',input5.value == ''){
+    alert("메뉴설정을 체크해주세요!")
+    return
+    }
+  }
+  else if(localStorage.getItem("list-test") == 1){
+   if(input1.value == '',input2.value == '',input3.value == '',input4.value == '',input5.value == '',input6.value == ''){
+   alert("메뉴설정을 체크해주세요!")
+   return
+   }
+  }
+  else if(localStorage.getItem("list-test") == 2){
+   if(input1.value == '',input2.value == '',input3.value == '',input4.value == '',input5.value == '',input6.value == '',input7.value == ''){
+   alert("메뉴설정을 체크해주세요!")
+   return
+   }
+  }
+  if(localStorage.getItem("list-chk") == 'false'){
+      alert("룰렛을 지정해주세요!")
+      return;
+  }
+  else{
+  
+  localStorage.setItem("textinput-1",'number');
+  localStorage.setItem("textinput-2",'number');
+  localStorage.setItem("textinput-3",'number');
+  localStorage.setItem("textinput-4",'number');
+  localStorage.setItem("textinput-5",'number');
+  localStorage.setItem("textinput-6",'number');
+  localStorage.setItem("textinput-7",'number');
+    
+  localStorage.setItem("ND-hold",true);
+
+  localStorage.setItem("TD-1",input1.value);
+  localStorage.setItem("TD-2",input2.value);
+  localStorage.setItem("TD-3",input3.value);
+  localStorage.setItem("TD-4",input4.value);
+  localStorage.setItem("TD-5",input5.value);
+  localStorage.setItem("TD-6",input6.value);
+  localStorage.setItem("TD-7",input7.value);
+
+  if(localStorage.getItem("균등분배체크")==0){
+  localStorage.setItem("ND-1",parseInt(inputN1.value||0));
+  localStorage.setItem("ND-2",parseInt(inputN2.value||0));
+  localStorage.setItem("ND-3",parseInt(inputN3.value||0));
+  localStorage.setItem("ND-4",parseInt(inputN4.value||0));
+  localStorage.setItem("ND-5",parseInt(inputN5.value||0));
+  localStorage.setItem("ND-6",parseInt(inputN6.value||0));
+  localStorage.setItem("ND-7",parseInt(inputN7.value||0));
+  }
+  else{
+  localStorage.setItem("ND-1",(inputN1.value));
+  localStorage.setItem("ND-2",(inputN2.value));
+  localStorage.setItem("ND-3",(inputN3.value));
+  localStorage.setItem("ND-4",(inputN4.value));
+  localStorage.setItem("ND-5",(inputN5.value));
+  localStorage.setItem("ND-6",(inputN6.value));
+  localStorage.setItem("ND-7",(inputN7.value));
+  }
+
+
+  localStorage.setItem("Data-01", parseFloat(inputN1.value) / 100);
+  localStorage.setItem("Data-02", parseFloat(inputN2.value) / 100);
+  localStorage.setItem("Data-03", parseFloat(inputN3.value) / 100);
+  localStorage.setItem("Data-04", parseFloat(inputN4.value) / 100);
+  localStorage.setItem("Data-05", parseFloat(inputN5.value) / 100);
+  localStorage.setItem("Data-06", parseFloat(inputN6.value) / 100);
+  localStorage.setItem("Data-07", parseFloat(inputN7.value) / 100);
+  //document.getElementById('합계').textContent='100%';
+  //form.reset();
+  alert("저장완료");
+  localStorage.setItem("MAIN-START",true)
+  location.reload();
+    }
+}
+  else{
+    alert("확률을 체크해주세요!");
+    return;
+  }
+  
+});
+
+//const percentCells = document.querySelectorAll('td[id^="퍼센트"]');
+/*percentCells.forEach(cell => {
+    const content = parseFloat(cell.textContent);
+    if (isNaN(content)) {
+        //cell.textContent = ''; // NaN 값을 지우기
+        //합계.textContent = '';
+    }
+});*/
+
+
+document.getElementById("B1").addEventListener('click',()=>{
+    window.location.href = './Roulette.html';
+    //history.back();
+})
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === '-' || event.key === '+' || event.key === '.') { //event.key === 'e'
+      event.preventDefault();
+    }
+});
+document.addEventListener("contextmenu", function(event) {
+  event.preventDefault();
+});
+document.addEventListener('dragstart', function(event) {
+  event.preventDefault();
+});
+document.body.addEventListener('touchstart', function(e) {
+  if ( (e.touches.length > 1) || e.targetTouches.length > 1) {
+    e.preventDefault();
+    e.stopPropagation();
+    e.stopImmediatePropagation();
+  }
+}, {passive: false});
+</script>
