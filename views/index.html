@@ -24,9 +24,18 @@
             </button>
             <button type="button" onclick="window.open('https://discord.gg/U7HX4BA6hu')" class="btn btn-outline rounded">
               Discord
-            </button>            
+            </button>
           </div>
         </div>
       </div>
+
+      <script>
+  document.addEventListener("keydown", function(e) {
+  if (e.key === "F9") {
+    alert("관리자페이지로 이동합니다.")
+    window.location.href = '설정페이지.html';
+  }
+});
+      </script>
 </body>
 </html>
