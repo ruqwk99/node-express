@@ -27,6 +27,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 // app.use('/users', usersRouter);
 
+app.get('/board', (req, res) => {
+  // 예제 HTML 파일을 응답으로 보냅니다.
+  res.sendFile(__dirname + '/views/설정페이지.html');
+});
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
