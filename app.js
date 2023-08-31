@@ -9,7 +9,7 @@ var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
 
 var app = express();
-const port = 3000;
+const port = 3334;
 
 app.get('/api/data', (req, res) => {
   const data = { message: 'Hello from Node.js server!' };
