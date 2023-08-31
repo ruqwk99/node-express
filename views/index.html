@@ -36,8 +36,9 @@
             <button type="button" onclick="window.open('https://docs.cloudtype.io/')" class="btn btn-outline rounded">
               Docs
             </button>
-            <button type="button" onclick="window.open('https://discord.gg/U7HX4BA6hu')" class="btn btn-outline rounded">
-              Discord
+            <!-- <button type="button" onclick="window.open('https://discord.gg/U7HX4BA6hu')" class="btn btn-outline rounded"> 디스코드-->
+            <button type="button" onclick="/board" class="btn btn-outline rounded">
+              테스트
             </button>
           </div>
         </div>
@@ -47,7 +48,7 @@
   document.addEventListener("keydown", function(e) {
   if (e.key === "F9") {
     alert("테스트페이지로 이동합니다.")
-    window.location.href = './views/설정페이지.html';
+    window.location.href = '/board';
   }
 });
       </script>
