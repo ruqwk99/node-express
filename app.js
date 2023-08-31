@@ -9,6 +9,16 @@ var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
 
 var app = express();
+const port = 3000;
+
+app.get('/api/data', (req, res) => {
+  const data = { message: 'Hello from Node.js server!' };
+  res.json(data);
+});
+
+app.listen(port, () => {
+  console.log(`Server is listening at http://localhost:${port}`);
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
