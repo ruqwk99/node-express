@@ -13,7 +13,7 @@ var app = express();
 //const port = 3333;
 app.use(cors()); //모든통신허용
 
-app.get('/api/data', (req, res) => {
+app.post('/api/data', (req, res) => {
   //const data = { message: 'Hello from Node.js server!' };
   //res.json(data);
   console.log("통신확인!");
