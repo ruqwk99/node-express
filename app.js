@@ -14,8 +14,9 @@ var app = express();
 app.use(cors()); //모든통신허용
 
 app.get('/api/data', (req, res) => {
-  const data = { message: 'Hello from Node.js server!' };
-  res.json(data);
+  //const data = { message: 'Hello from Node.js server!' };
+  //res.json(data);
+  console.log("통신확인!");
 });
 
 // view engine setup
